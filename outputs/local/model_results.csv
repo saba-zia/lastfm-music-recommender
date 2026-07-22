@@ -1,0 +1,6 @@
+model,metric,k,score
+Popularity,HitRate,10,0.004372
+Content-Based,HitRate,10,0.005100
+ItemKNN,HitRate,10,0.032058
+ALS,HitRate,10,0.058288
+Hybrid,HitRate,10,0.052459

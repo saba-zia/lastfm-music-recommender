@@ -1,0 +1,95 @@
+# --------------------------------------------------
+# Python virtual environments
+# --------------------------------------------------
+.venv/
+venv/
+env/
+
+# --------------------------------------------------
+# Python cache and compiled files
+# --------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+
+# --------------------------------------------------
+# Testing and coverage
+# --------------------------------------------------
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+
+# --------------------------------------------------
+# Python packaging and build artifacts
+# --------------------------------------------------
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# --------------------------------------------------
+# IDE and editor files
+# --------------------------------------------------
+.vscode/
+.idea/
+*.code-workspace
+
+# --------------------------------------------------
+# Jupyter temporary files
+# --------------------------------------------------
+.ipynb_checkpoints/
+
+# --------------------------------------------------
+# Operating-system files
+# --------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --------------------------------------------------
+# Environment variables and secrets
+# --------------------------------------------------
+.env
+.env.*
+!.env.example
+
+# --------------------------------------------------
+# Logs and temporary files
+# --------------------------------------------------
+*.log
+*.tmp
+*.temp
+
+# --------------------------------------------------
+# Raw and generated datasets
+# Do not upload the LastFM dataset to GitHub
+# --------------------------------------------------
+data/raw/*
+data/processed/*
+data/external/*
+
+# Preserve empty data directories when .gitkeep exists
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/external/.gitkeep
+
+# --------------------------------------------------
+# Generated submissions
+# --------------------------------------------------
+outputs/submissions/*
+
+# Ignore local outputs except the benchmark results
+outputs/local/*
+!outputs/local/model_results.csv
+
+# --------------------------------------------------
+# Generated model files
+# --------------------------------------------------
+*.pkl
+*.pickle
+*.joblib
+*.npz
+*.npy
+*.model

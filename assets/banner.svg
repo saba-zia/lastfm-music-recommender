@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="500" viewBox="0 0 1600 500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1020"/>
+      <stop offset="55%" stop-color="#131a35"/>
+      <stop offset="100%" stop-color="#1b1240"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#22d3ee"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="7" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="500" rx="36" fill="url(#bg)"/>
+  <circle cx="145" cy="120" r="95" fill="#6d28d9" opacity="0.12"/>
+  <circle cx="1460" cy="390" r="140" fill="#0891b2" opacity="0.10"/>
+
+  <!-- Music icon -->
+  <g transform="translate(95 120)" filter="url(#glow)">
+    <circle cx="100" cy="100" r="86" fill="#7c3aed" opacity="0.18"/>
+    <path d="M120 45v118c0 25-22 45-49 45-23 0-41-14-41-34s18-34 41-34c9 0 17 2 24 6V70l86-20v90c0 25-22 45-49 45-23 0-41-14-41-34s18-34 41-34c9 0 17 2 24 6V35z"
+          fill="url(#accent)"/>
+  </g>
+
+  <!-- Title -->
+  <text x="335" y="145" font-family="Arial, Helvetica, sans-serif" font-size="62" font-weight="700" fill="#ffffff">
+    LastFM Music Recommender
+  </text>
+  <text x="338" y="205" font-family="Arial, Helvetica, sans-serif" font-size="27" fill="#cbd5e1">
+    Modular recommendation system for implicit-feedback music data
+  </text>
+
+  <!-- Model pills -->
+  <g font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="600">
+    <rect x="338" y="250" width="160" height="52" rx="26" fill="#6d28d9" opacity="0.88"/>
+    <text x="376" y="284" fill="#fff">Popularity</text>
+
+    <rect x="515" y="250" width="145" height="52" rx="26" fill="#5b21b6" opacity="0.88"/>
+    <text x="553" y="284" fill="#fff">ItemKNN</text>
+
+    <rect x="677" y="250" width="220" height="52" rx="26" fill="#4c1d95" opacity="0.88"/>
+    <text x="710" y="284" fill="#fff">Content-Based</text>
+
+    <rect x="914" y="250" width="95" height="52" rx="26" fill="#0e7490" opacity="0.88"/>
+    <text x="945" y="284" fill="#fff">ALS</text>
+
+    <rect x="1026" y="250" width="120" height="52" rx="26" fill="#155e75" opacity="0.88"/>
+    <text x="1057" y="284" fill="#fff">Hybrid</text>
+  </g>
+
+  <text x="338" y="360" font-family="Arial, Helvetica, sans-serif" font-size="25" fill="#93c5fd">
+    Python  •  Machine Learning  •  Recommender Systems  •  GitHub Actions
+  </text>
+
+  <!-- Network graphic -->
+  <g stroke="url(#accent)" stroke-width="3" fill="#0b1020" opacity="0.95">
+    <line x1="1250" y1="120" x2="1380" y2="90"/>
+    <line x1="1250" y1="120" x2="1335" y2="195"/>
+    <line x1="1380" y1="90" x2="1475" y2="155"/>
+    <line x1="1335" y1="195" x2="1475" y2="155"/>
+    <line x1="1335" y1="195" x2="1410" y2="290"/>
+    <line x1="1475" y1="155" x2="1510" y2="270"/>
+    <line x1="1410" y1="290" x2="1510" y2="270"/>
+    <line x1="1250" y1="120" x2="1210" y2="265"/>
+    <line x1="1210" y1="265" x2="1410" y2="290"/>
+    <circle cx="1250" cy="120" r="14" fill="#8b5cf6"/>
+    <circle cx="1380" cy="90" r="14" fill="#22d3ee"/>
+    <circle cx="1475" cy="155" r="14" fill="#8b5cf6"/>
+    <circle cx="1335" cy="195" r="14" fill="#22d3ee"/>
+    <circle cx="1410" cy="290" r="14" fill="#8b5cf6"/>
+    <circle cx="1510" cy="270" r="14" fill="#22d3ee"/>
+    <circle cx="1210" cy="265" r="14" fill="#8b5cf6"/>
+  </g>
+
+  <rect x="28" y="28" width="1544" height="444" rx="30" fill="none" stroke="#334155" stroke-width="2"/>
+</svg>

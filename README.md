@@ -1,14 +1,10 @@
 # 🎵 LastFM Music Recommender
 
-A modular music recommendation system built in Python for implicit-feedback data, featuring Popularity, ItemKNN, Content-Based, ALS and Hybrid recommendation models.
+<p align="center">
+  <img src="assets/banner.svg" alt="LastFM Music Recommender Banner" width="100%">
+</p>
 
-[![Tests](https://github.com/saba-zia/lastfm-music-recommender/actions/workflows/tests.yml/badge.svg)](https://github.com/saba-zia/lastfm-music-recommender/actions/workflows/tests.yml)
-![Python](https://img.shields.io/badge/Python-3.11-blue)
-![Tests](https://img.shields.io/badge/tests-36%20passing-brightgreen)
-![License](https://img.shields.io/badge/license-MIT-green)
-
-> Built as an end-to-end machine learning portfolio project with modular model design, automated evaluation, visualization, unit testing and continuous integration.
-
+A modular music recommendation system built in Python...
 ---
 
 ## ⭐ Key Features

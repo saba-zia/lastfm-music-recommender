@@ -1,47 +1,60 @@
+## ⭐ Key Features
+
+- Modular recommendation system built with Python
+- Five recommendation approaches:
+  - Popularity-based
+  - ItemKNN collaborative filtering
+  - Content-based filtering
+  - Alternating Least Squares (ALS)
+  - Hybrid recommendation
+- Unified interface for training and recommendation
+- Offline model evaluation
+- Automated performance visualization
+- 36 unit tests
+- Continuous Integration with GitHub Actions
+- Standard `src`-based Python package structure
+
+---
+
 ## 🗺️ Project Roadmap
 
 ```mermaid
-flowchart TD
+flowchart LR
 
-A[Project Setup]
-B[Data Loading]
-C[Recommendation Models]
-D[Offline Evaluation]
-E[Visualization]
-F[Documentation]
-G[GitHub Portfolio]
+    A[Project Setup] --> B[Data Loading]
+    B --> C[Recommendation Models]
+    C --> D[Offline Evaluation]
+    D --> E[Visualization]
+    E --> F[Testing and CI]
+    F --> G[Documentation]
+    G --> H[GitHub Portfolio]
 
-A --> B
-B --> C
-C --> D
-D --> E
-E --> F
-F --> G
-
-C --> P[Popularity]
-C --> I[ItemKNN]
-C --> CB[Content-Based]
-C --> ALS[ALS]
-C --> H[Hybrid]
+    C --> P[Popularity]
+    C --> I[ItemKNN]
+    C --> CB[Content-Based]
+    C --> ALS[ALS]
+    C --> HY[Hybrid]
 ```
 
-### Development Status
+---
 
-| Component | Status |
-|------------|--------|
+## ✅ Project Status
+
+| Area | Status |
+|------|--------|
 | Project Structure | ✅ Completed |
-| Data Loading | ✅ Completed |
-| Evaluation Framework | ✅ Completed |
-| Popularity Model | ✅ Completed |
-| ItemKNN | ✅ Completed |
-| Content-Based | ✅ Completed |
-| ALS | ✅ Completed |
-| Hybrid | ✅ Completed |
-| Visualization | ✅ Completed |
-| Unit Tests | ✅ 36 Passed |
-| Documentation | 🟡 In Progress |
-| GitHub Actions | ⏳ Planned |
-| Streamlit Demo | ⏳ Planned |
+| Data Loading and Validation | ✅ Completed |
+| Popularity Recommender | ✅ Completed |
+| ItemKNN Recommender | ✅ Completed |
+| Content-Based Recommender | ✅ Completed |
+| ALS Recommender | ✅ Completed |
+| Hybrid Recommender | ✅ Completed |
+| Offline Evaluation | ✅ Completed |
+| Performance Visualization | ✅ Completed |
+| Unit Tests | ✅ 36 Passing |
+| GitHub Actions CI | ✅ Passing |
+| Documentation | 🚧 In Progress |
+| Interactive Demo | 📌 Planned |
 
 ---
 
@@ -50,75 +63,95 @@ C --> H[Hybrid]
 ```mermaid
 flowchart TD
 
-DATA[(LastFM Dataset)]
+    DATA[(LastFM Dataset)] --> LOADER[Data Loader]
+    LOADER --> VALIDATION[Data Validation]
 
-DATA --> LOADER[Data Loader]
+    VALIDATION --> MATRIX[User-Item Matrix]
+    VALIDATION --> FEATURES[MusicNN Features]
 
-LOADER --> VALIDATION[Validation]
+    MATRIX --> POP[Popularity]
+    MATRIX --> ITEM[ItemKNN]
+    MATRIX --> ALS[ALS]
 
-VALIDATION --> MATRIX[User-Item Matrix]
+    FEATURES --> CONTENT[Content-Based]
 
-VALIDATION --> FEATURES[MusicNN Features]
+    ITEM --> HYBRID[Hybrid]
+    ALS --> HYBRID
 
-MATRIX --> POP[Popularity]
+    POP --> EVAL[Offline Evaluation]
+    ITEM --> EVAL
+    CONTENT --> EVAL
+    ALS --> EVAL
+    HYBRID --> EVAL
 
-MATRIX --> ITEM[ItemKNN]
-
-MATRIX --> ALS[ALS]
-
-FEATURES --> CONTENT[Content-Based]
-
-ALS --> HYBRID[Hybrid]
-
-ITEM --> HYBRID
-
-POP --> EVAL[Offline Evaluation]
-ITEM --> EVAL
-CONTENT --> EVAL
-ALS --> EVAL
-HYBRID --> EVAL
-
-EVAL --> RESULTS[(model_results.csv)]
-
-RESULTS --> CHART[Performance Visualization]
-```
-
-Every recommender implements the same interface:
-
-```python
-model.fit(interactions)
-recommendations = model.recommend(user_id, k=10)
+    EVAL --> RESULTS[(model_results.csv)]
+    RESULTS --> CHART[Performance Visualization]
 ```
 
 ---
 
-## 🔮 Future Work
+## 💻 Unified Model Interface
+
+All recommendation models follow a consistent interface. This makes it easier to train, compare and replace models without changing the rest of the evaluation pipeline.
+
+```python
+model.fit(interactions)
+
+recommendations = model.recommend(
+    user_id=42,
+    k=10,
+)
+```
+
+---
+
+## 🧪 Testing and Continuous Integration
+
+The repository contains automated tests for the data-loading pipeline, evaluation functions and recommendation models.
+
+Every push and pull request to the `main` branch automatically runs the test suite through GitHub Actions.
+
+```bash
+python -m pytest -v
+```
+
+Current test status:
+
+```text
+36 passed
+```
+
+---
+
+## 🚀 Future Work
 
 ### Evaluation
 
 - Precision@K
 - Recall@K
 - nDCG@K
-- Mean Average Precision (MAP)
+- Mean Average Precision
+- Recommendation coverage
+- Recommendation diversity
 
 ### Recommendation Models
 
-- Bayesian Personalized Ranking (BPR)
+- Bayesian Personalized Ranking
 - LightFM
 - Neural Collaborative Filtering
-- Graph-based Recommendation
+- Graph-based recommendation
 
 ### Engineering
 
-- GitHub Actions (Continuous Integration)
 - Docker support
 - Model persistence
-- Configuration files
+- Configuration management
 - Experiment tracking
+- Code coverage reporting
 
 ### Deployment
 
-- Streamlit Web Application
+- Streamlit web application
 - FastAPI REST API
-- Public cloud deployment
 - Interactive recommendation dashboard
+- Public cloud deployment
